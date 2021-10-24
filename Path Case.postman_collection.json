@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "eb741444-8d7a-4fa1-904d-bdd16acb6d14",
+		"name": "Path Case",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2MzUxMDcwNjAsImV4cCI6MTYzNTE1MDI2MCwicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImthY21hei5vbnVyQGhvdG1haWwuY29tIn0.S_TZiEE0WFa94XbYoS3goCvZ_PnfnTXRuffazw_N51TwbB7HFoKhuMRQ8T0fuBb8lQafsMS7YBIHClcEeo9Wt9ySb89iOSoFxXpPOzJKrAkv0I_uA5VR0DarugbtMIpfxSzkQhpBNAzGgDkenQSxwAVdyXYUy_nkXZ_secG4HVMexAdigAH_ZeTKa9Z4OCN0LtObhIgYqzURwEPe2PhEliQQvtiUlUo_M4HypxMg24S534CX7g0zEKKF6-uz7tuQiGm1zG7fpGVml2silNNkf1GiJTilR7Lj7XX75yT1Lodq3qN3O5QpwwpGLx8LWxjMBAFFQy6Qp-Ixo9nkIWJtvg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/orders",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOrder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2MzUxMDQxNjIsImV4cCI6MTYzNTE0NzM2Miwicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImthY21hei5vbnVyQGhvdG1haWwuY29tIn0.JjB6p3gs_RTKu6g-Hs_h6qhOXCGY3lYuV0M4UHRWXxQMe6MqhDQo0wxkR9NPOnx6VOVXE7Npn9WIOtINFlj2SMyuDcA7iBElG7rjuUZji0BBti6Clxt8EnfUfvfLsV7_xYgpuevCMNvupqNrDPUMTPPdLtGruIsWSlsCgdbUH3HwZ1p4fDhac0A64jz-Bvvv8vueqqywyc7T-dm5SnYxQZGe4Pqm3apGjWbNrq06Yjzv22WmwQmGqrZjg4x7vqqBmFGvUVZUGBUByvkKtq2ZHhNlNGzFYPLvAg5RdjZUxXuiRIdVbFnG4UKlYB8uJbI3MW33IvvABQOpho8XgONBow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/orders/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"orders",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2MzUxMDQxNjIsImV4cCI6MTYzNTE0NzM2Miwicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImthY21hei5vbnVyQGhvdG1haWwuY29tIn0.JjB6p3gs_RTKu6g-Hs_h6qhOXCGY3lYuV0M4UHRWXxQMe6MqhDQo0wxkR9NPOnx6VOVXE7Npn9WIOtINFlj2SMyuDcA7iBElG7rjuUZji0BBti6Clxt8EnfUfvfLsV7_xYgpuevCMNvupqNrDPUMTPPdLtGruIsWSlsCgdbUH3HwZ1p4fDhac0A64jz-Bvvv8vueqqywyc7T-dm5SnYxQZGe4Pqm3apGjWbNrq06Yjzv22WmwQmGqrZjg4x7vqqBmFGvUVZUGBUByvkKtq2ZHhNlNGzFYPLvAg5RdjZUxXuiRIdVbFnG4UKlYB8uJbI3MW33IvvABQOpho8XgONBow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"orderCode\": \"A3\",\n\t\"products\": [\n\t\t{\n\t\t\t\"quantity\": 1\n\t\t},\n\t\t{\n\t\t\t\"quantity\": 1\n\t\t}\n\t],\t\n\t\"address\": {\n\t\t\"address\": \"test adresi\",\n\t\t\"city\": \"Samsun\",\n\t\t\"district\": \"İlkadım\",\n\t\t\"country\": \"Türkiye\"\n\t},\n\t\"shippingDate\": \"2019-01-01\",\n\t\"createdAt\": \"2020-01-01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/orders",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2MzUxMDQxNjIsImV4cCI6MTYzNTE0NzM2Miwicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImthY21hei5vbnVyQGhvdG1haWwuY29tIn0.JjB6p3gs_RTKu6g-Hs_h6qhOXCGY3lYuV0M4UHRWXxQMe6MqhDQo0wxkR9NPOnx6VOVXE7Npn9WIOtINFlj2SMyuDcA7iBElG7rjuUZji0BBti6Clxt8EnfUfvfLsV7_xYgpuevCMNvupqNrDPUMTPPdLtGruIsWSlsCgdbUH3HwZ1p4fDhac0A64jz-Bvvv8vueqqywyc7T-dm5SnYxQZGe4Pqm3apGjWbNrq06Yjzv22WmwQmGqrZjg4x7vqqBmFGvUVZUGBUByvkKtq2ZHhNlNGzFYPLvAg5RdjZUxXuiRIdVbFnG4UKlYB8uJbI3MW33IvvABQOpho8XgONBow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"orderCode\": \"A2\",\n\t\"products\": [\n\t\t{\n\t\t\t\"productId\": 25,\n\t\t\t\"quantity\": 55\n\t\t},\n\t\t{\n\t\t\t\"productId\": 26,\n\t\t\t\"quantity\": 4\n\t\t}\n\t],\t\n\t\"address\": {\n\t\t\"address\": \"test adresi2\",\n\t\t\"city\": \"Samsun\",\n\t\t\"district\": \"İlkadım\",\n\t\t\"country\": \"Türkiye\"\n\t},\n\t\"shippingDate\": \"2019-01-01\",\n\t\"createdAt\": \"2020-01-01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/orders/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"orders",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"kacmaz.onur@hotmail.com\",\n\t\"password\": \"1234\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/auth/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "373141e0-574c-4bd6-9a98-d556d392babb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "e0e30ed0-57af-48c9-82e1-7bbf41948302",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "4ac34969-02e6-4920-8d32-9338dcda9a99",
+			"key": "url",
+			"value": "https://127.0.0.1:8000",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
