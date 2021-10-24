@@ -1,0 +1,24 @@
+login:
+  path: /api/auth/login
+  controller: App\Controller\Api\AuthController::login
+  methods: POST
+
+create_order:
+  path: /api/orders
+  controller: App\Controller\Api\OrderController::store
+  methods: POST
+
+update_order:
+  path: /api/orders/{orderId}
+  controller: App\Controller\Api\OrderController::update
+  methods: PUT|PATCH
+
+show_order_with_detail:
+  path: /api/orders/{orderId}
+  controller: App\Controller\Api\OrderController::show
+  methods: GET|HEAD
+
+list_orders:
+  path: /api/orders
+  controller: App\Controller\Api\OrderController::index
+  methods: GET|HEAD
