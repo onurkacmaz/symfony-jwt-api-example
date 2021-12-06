@@ -16,3 +16,4 @@
 .phpintel/
 composer.lock
 symfony.lock
+.vscode
