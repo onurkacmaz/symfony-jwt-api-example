@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\OrderProduct;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Exception as ExceptionAlias;
 
 /**
  * @method OrderProduct|null find($id, $lockMode = null, $lockVersion = null)
@@ -32,7 +33,7 @@ class OrderProductRepository extends ServiceEntityRepository
             $this->getEntityManager()->persist($orderProduct);
             $this->getEntityManager()->flush();
             return $orderProduct;
-        } catch (\Exception $e) {
+        } catch (ExceptionAlias $e) {
             return null;
         }
     }
@@ -48,12 +49,11 @@ class OrderProductRepository extends ServiceEntityRepository
         }, $data);
     }
 
-    /**
-     * @param int $orderId
-     * @param int $orderProductId
-     * @param array $parameters
-     * @return bool
-     */
+	/**
+	 * @param int $orderProductId
+	 * @param array $parameters
+	 * @return bool
+	 */
     public function update(int $orderProductId, array $parameters): bool
     {
         try {
@@ -69,7 +69,7 @@ class OrderProductRepository extends ServiceEntityRepository
                 return true;
             }
             return false;
-        } catch (\Exception $e) {
+        } catch (ExceptionAlias $e) {
             return false;
         }
     }

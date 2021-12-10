@@ -55,7 +55,7 @@ class OrderController extends AbstractController
             $orderAddressRepository->update($orderId, $requestAsArray['address']);
         }
         if ($request->has('products')) {
-            array_map(function ($orderProduct) use ($orderProductRepository) {
+            array_map(static function ($orderProduct) use ($orderProductRepository) {
                 $orderProductRepository->update($orderProduct['productId'], $orderProduct);
             }, $requestAsArray['products']);
         }
@@ -70,15 +70,15 @@ class OrderController extends AbstractController
      * @param OrderProductRepository $orderProductRepository
      * @return JsonResponse
      */
-    public function store(Request $request, OrderRepository $orderRepository, OrderAddressRepository $orderAddressRepository, OrderProductRepository $orderProductRepository)
-    {
+    public function store(Request $request, OrderRepository $orderRepository, OrderAddressRepository $orderAddressRepository, OrderProductRepository $orderProductRepository): JsonResponse
+	{
         $request = new OrderStoreRequest($request);
         $requestAsArray = $request->all();
         if (!$request->isValid()) {
             return $this->json($request->errors(), Response::HTTP_BAD_REQUEST);
         }
 
-        if ($orderRepository->isOrderCodeUsed($this->getUser()->getId(), $request->get('orderCode'), null)) {
+        if ($orderRepository->isOrderCodeUsed($this->getUser()->getId(), $request->get('orderCode'))) {
             return $this->json([
                 'message' => 'orderCode already used by another order.'
             ], Response::HTTP_BAD_REQUEST);
