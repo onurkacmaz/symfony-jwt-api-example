@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\OrderRepository;
 use DateTime;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -44,8 +45,16 @@ class Order
 
     public function __construct()
     {
-        $this->setCreatedAt(is_null($this->getCreatedAt()) ? new \DateTime() : null);
+        $this->setCreatedAt(is_null($this->getCreatedAt()) ? new DateTime() : null);
     }
+
+	/**
+	 * @param int $id
+	 */
+	public function setId(int $id): void
+	{
+		$this->id = $id;
+	}
 
     public function getId(): ?int
     {
@@ -84,12 +93,12 @@ class Order
         return $this->shippingDate;
     }
 
-    public function getCreatedAt(): ?\DateTimeInterface
+    public function getCreatedAt(): ?DateTimeInterface
     {
         return $this->createdAt;
     }
 
-    public function setCreatedAt(?\DateTimeInterface $created_at): self
+    public function setCreatedAt(?DateTimeInterface $created_at): self
     {
         $this->createdAt = $created_at;
         return $this;
