@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\OrderProductRepository;
+use DateTime;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -30,12 +32,20 @@ class OrderProduct
     /**
      * @ORM\Column(type="date", nullable=true)
      */
-    private ?\DateTime $created_at = null;
+    private ?DateTime $created_at = null;
 
     public function __construct()
     {
-        $this->setCreatedAt(is_null($this->getCreatedAt()) ? new \DateTime() : null);
+        $this->setCreatedAt(is_null($this->getCreatedAt()) ? new DateTime() : null);
     }
+
+	/**
+	 * @param int $id
+	 */
+	public function setId(int $id): void
+	{
+		$this->id = $id;
+	}
 
     public function getId(): ?int
     {
@@ -66,12 +76,12 @@ class OrderProduct
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeInterface
+    public function getCreatedAt(): ?DateTimeInterface
     {
         return $this->created_at;
     }
 
-    public function setCreatedAt(?\DateTimeInterface $created_at): self
+    public function setCreatedAt(?DateTimeInterface $created_at): self
     {
         $this->created_at = $created_at;
 
