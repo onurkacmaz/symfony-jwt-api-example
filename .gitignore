@@ -16,3 +16,5 @@
 .phpintel/
 composer.lock
 symfony.lock
+docker-compose.override.yml
+docker-compose.yml
