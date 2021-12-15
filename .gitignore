@@ -19,3 +19,4 @@ symfony.lock
 docker-compose.override.yml
 docker-compose.yml
 .vscode
+.gitignore
